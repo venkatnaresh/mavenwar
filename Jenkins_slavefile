@@ -17,6 +17,8 @@ pipeline {
 	        steps {
 //				sh '${MAVEN_HOME}/bin/mvn install'
 				sh '/home/softwares/apache-maven-3.5.4/bin/mvn install'
+ 	sh 'sshpass -p "1433" scp /home/sachin/slave1/workspace/jenkins_pipeline_slave/target/mavenwar.war /home/softwares/apache-tomcat-8.5.32/webapps'
+            sh '/home/softwares/apache-tomcat-8.5.32/bin/startup.sh'
 	        }
 		}
 	}
